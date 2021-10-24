@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     // MARK: Private
 
     private func buildView() {
-        let factory = AnyFactory(ViewFactory())
-        let view = factory.build(with: ViewFactory.Context(color: .red))
+        let factory = AnyFactory(factory: ViewFactory())
+        let view = factory.build(with: ViewContext(color: .red))
         self.view = view
     }
 }
