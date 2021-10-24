@@ -12,8 +12,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+        buildView()
     }
 
 
+    // MARK: Private
+
+    private func buildView() {
+        let factory = AnyFactory(ViewFactory())
+        let view = factory.build(with: ViewFactory.Context(color: .red))
+        self.view = view
+    }
 }
 
